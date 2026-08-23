@@ -1,0 +1,272 @@
+zone "Shape 1" [color: blue, shape: rectangle, border: solid, textColor: #f9a6a6, pos: -134,12, size: 979,259, name: ENTERPRISE NETWORK (Corporate Data center / cloud) Level 5] {
+}
+
+Erp [icon: sap::Erp, pos: 476,156, name: Erpopiu]
+
+Mes [icon: sap::Mes, pos: -62,55]
+
+Server [icon: generic::Server, pos: -68,157, name: WMS]
+
+Lims [icon: generic::Lims, pos: 700,56]
+
+Active Directory [icon: oci::Active Directory, pos: 300,105]
+
+Siem [icon: generic::Siem, pos: 702,160]
+
+Server 2 [icon: generic::Server, pos: 473,58, name: BACKUP SERVER]
+
+Certificate Authority [icon: generic::Certificate Authority, pos: 110,159]
+
+Email Delivery [icon: oci::Email Delivery, pos: 109,53]
+
+zone "Shape 2" [color: purple, shape: rectangle, border: solid, textColor: #f9a6a6, pos: -113,303, size: 816,223, name: DMZ level 3.5] {
+}
+
+Reverse Proxy [icon: generic::Reverse Proxy, pos: -71,348]
+
+Api Gateway [icon: generic::Api Gateway, pos: 49,347]
+
+Secure File Transfer [icon: generic::Secure File Transfer, pos: 279,346]
+
+Jump Server [icon: generic::Jump Server, pos: 590,343]
+
+Patch Repository [icon: generic::Patch Repository, pos: 441,344]
+
+Av Repository [icon: generic::Av Repository, pos: 516,425]
+
+NTP [icon: cisco::NTP, pos: 44,432]
+
+Wsus [icon: generic::Wsus, pos: 145,343]
+
+Monitoring Server [icon: generic::Monitoring Server, pos: -69,428]
+
+Historian Replica [icon: generic::Historian Replica, pos: 155,428]
+
+Serialization Gateway [icon: generic::Serialization Gateway, pos: 329,430]
+
+
+Esxi [icon: generic::Esxi, pos: -38,797]
+
+Esxi 2 [icon: generic::Esxi, pos: 68,798]
+
+Vcenter Server [icon: generic::Vcenter Server, pos: 176,800]
+
+Esxi 3 [icon: generic::Esxi, pos: 322,798]
+
+Esxi 4 [icon: generic::Esxi, pos: 458,797]
+
+
+
+zone "Shape 3" [color: green, shape: rectangle, border: dashed, textColor: #640564, pos: -71,713, size: 625,194, name: vmware vsphere cluster (all connections bi directional), textColor: #f9a6a6 ] {
+}
+
+zone "Shape 4" [color: orange, shape: rectangle, border: dashed, textColor: #640564, pos: 569,715, size: 353,189,name:shared storage, textColor: #f9a6a6] {
+}
+
+zone "Shape 5" [color: red, shape: rectangle, border: dashed, textColor: #640564, pos: -113,948, size: 1218,339, name:virtual machines (vms), textColor: #f9a6a6] {
+}
+
+zone "Shape 6" [color: blue, shape: rectangle, border: solid, textColor: #056418, pos: -188,648, size: 1703,668, name: industrial data center (ids) level 3, textColor: #f9a6a6] {
+}
+esxi > esxi-2
+esxi-2 > vcenter-server
+esxi-4 > esxi-3
+esxi-3 > vcenter-server
+
+Vsan Nas [icon: generic::Vsan Nas, pos: 819,788]
+
+Vsan Nas 2 [icon: generic::Vsan Nas, pos: 726,787]
+
+Vsan Nas 3 [icon: generic::Vsan Nas, pos: 615,786]
+
+Serialisation Server [icon: generic::Serialisation Server, pos: 771,1139]
+
+Site Manager [icon: generic::Site Manager, pos: 750,1019]
+
+Line Management Server [icon: generic::Line Management Server, pos: -73,1142]
+
+Sql Server Cluster [icon: generic::Sql Server Cluster, pos: 615,1141]
+
+Opc Ua Server [icon: generic::Opc Ua Server, pos: 356,1144]
+
+Mqtt Broker [icon: industrial::Mqtt Broker, pos: 70,1145]
+
+Historian [icon: scada::Historian, pos: 477,1143]
+
+Domain Controller Rodc [icon: generic::Domain Controller Rodc, pos: 208,1143]
+
+Dns Dhcp [icon: generic::Dns Dhcp, pos: 624,1024]
+
+File Server [icon: generic::File Server, pos: 359,1024]
+
+Backup Proxy [icon: generic::Backup Proxy, pos: -70,1022]
+
+Monitoring Server 2 [icon: generic::Monitoring Server, pos: 215,1026]
+
+Av Management [icon: generic::Av Management, pos: 74,1024]
+
+Patch Mgmt Server [icon: generic::Patch Mgmt Server, pos: 481,1025]
+
+Certificate Authority 2 [icon: generic::Certificate Authority, pos: 941,1082]
+
+zone "Text 1" [color: blue, shape: text, border: solid, textColor: #FFFFFF, pos: 1254,800, size: 204,326, name: IDC SERVICES : 1. vMware HA / DRS 2. vMotion 3. Fault Tolerance 4. vSAN Replication 5. NSX Segmentation 6. Backup & DR 7. Central Monitoring 8. Time Sync (NTP)] {
+}
+
+zone "Shape 7" [color: purple, shape: rectangle, border: dashed, textColor: #FFFFFF, pos: -64,1770, size: 766,374, name: PACKAGING LINE 1] {
+}
+
+HMI [icon: industrial::HMI, pos: 141,1837]
+
+Serialisation Controller [icon: generic::Serialisation Controller, pos: 476,1830]
+
+PLC [icon: industrial::PLC, pos: 7,2032]
+
+Printing Page [icon: generic::Printing Page, pos: 178,2033]
+
+Vision System [icon: generic::Vision System, pos: 606,2029]
+
+Scanner [icon: generic::Scanner, pos: 315,2030]
+
+Aggregation Station [icon: generic::Aggregation Station, pos: 452,2027]
+
+zone "Shape 8" [color: green, shape: rectangle, border: dashed, textColor: #FFFFFF, pos: 746,1766, size: 967,383, name: packaging line 2] {
+}
+
+zone "Shape 9" [color: orange, shape: rectangle, border: dashed, textColor: #FFFFFF, pos: 1789,1751, size: 722,462, name: PACKAGING LINE n] {
+}
+
+HMI 2 [icon: industrial::HMI, pos: 1119,1839]
+
+HMI 3 [icon: industrial::HMI, pos: 1972,1813]
+
+Serialisation Controller 2 [icon: generic::Serialisation Controller, pos: 1377,1828]
+
+PLC 2 [icon: industrial::PLC, pos: 962,2047]
+
+Printing Page 2 [icon: generic::Printing Page, pos: 1592,2051]
+
+Vision System 2 [icon: generic::Vision System, pos: 1165,2046]
+
+Scanner 2 [icon: generic::Scanner, pos: 781,2042]
+
+Aggregation Station 2 [icon: generic::Aggregation Station, pos: 1380,2045]
+
+Serialisation Controller 3 [icon: generic::Serialisation Controller, pos: 2163,1809]
+
+PLC 3 [icon: industrial::PLC, pos: 2401,2012]
+
+Printing Page 3 [icon: generic::Printing Page, pos: 1855,2021]
+
+Vision System 3 [icon: generic::Vision System, pos: 1975,2019]
+
+Scanner 3 [icon: generic::Scanner, pos: 2115,2016]
+
+Aggregation Station 3 [icon: generic::Aggregation Station, pos: 2264,2016]
+
+zone "Shape 10" [color: red, shape: rectangle, border: dashed, textColor: #FFFFFF, pos: -210,1669, size: 2777,600, name: Manufacturing network level 2] {
+}
+
+zone "Text 2" [color: purple, shape: text, border: dashed, textColor: #16A34A, pos: 2847,1840, size: 393,293, name: Plant Network Services 1. NTP 2. Local DNS 3. Local Historian 4. Engineering WS 5. Jump Server(Local) 6. Backup Agent] {
+}
+
+Industrial Core Switch [icon: generic::Industrial Core Switch, pos: 83,1431]
+
+Industrial Core Switch 2 [icon: generic::Industrial Core Switch, pos: 692,1437]
+industrial-core-switch > industrial-core-switch-2 [conduit: Bi-Directional (Redundant)]
+
+zone "Shape 11" [color: blue, shape: rectangle, border: solid, textColor: #16A34A, pos: 2,2327, size: 433,198, name: control network (level 1)] {
+}
+zone "Shape 12" [color: blue, shape: rectangle, border: solid, textColor: #16A34A, pos: 2074,2320, size: 402,256, name: control network (level 1)] {
+}
+zone "Shape 13" [color: blue, shape: rectangle, border: solid, textColor: #16A34A, pos: 1132,2326, size: 360,182, name: control network (level 1)] {
+}
+
+Server 3 [icon: generic::Server, name: PLC I/O Controller, pos: 190,2401]
+
+Server 4 [icon: generic::Server, pos: 2221,2421, name: PLC I/O Controller]
+
+Server 5 [icon: generic::Server, name: PLC I/O Controller, pos: 1280,2394]
+
+Sensor [icon: industrial::Sensor, pos: 1014,2765]
+
+Motor [icon: generic::Motor, pos: 572,2771]
+
+Conveyor [icon: generic::Conveyor, pos: 1385,2767]
+
+Machinery [icon: generic::Machinery, pos: 1712,2755]
+
+Actuator [icon: cisco::Actuator, pos: 2055,2753]
+
+zone "Shape 14" [color: orange, shape: rectangle, border: solid, textColor: #16A34A, pos: 341,2621, size: 1985,360, name: Field devices (level 0)] {
+}
+
+zone "Text 3" [color: green, shape: text, border: solid, textColor: #e9ebea, pos: 1776,859, size: 212,222, name: Enterprise Connectivity 1. VPN 2. SSL /TLS 3. Secure APIs] {
+}
+
+zone "Text 4" [color: orange, shape: text, border: solid, textColor: #16A34A, pos: 2188,794, size: 338,322, name: External Systems 1. SAP ATTP 2. TraceLink 3. Regulatory Portals 4. GS1 Repositories] {
+}
+
+zone "Text 5" [color: red, shape: text, border: solid, textColor: #e3e9e6, pos: 2749,722, size: 518,539, name: Security Controls (IEC 62442)--- Network Security 1. Firewall ACLs 2. Network Segmentation 3. IDS/IPS. System Security 1. Hardened 2. Patch Management 3. Application Allowlisting 4. EDS/Anti - Malware. Access Security 1. MFA / RBAC 2. Data Security 1. TLS 1.2+ 2. Encryption at Rest 3. Secure Backups.  Monitoring & Logging 1. Centralized Logging 2. SIEM Integration 3. 24X7 Monitoring] {
+}
+
+zone "Text 6" [color: blue, shape: text, border: solid, textColor: #e3e8e6, pos: 2806,2581, size: 509,360, name: HA / DR Strategy---- 1. Redundant Infrastructure 2. Offsite Backup 3. VMware Site Recovery Manager 4. RPO/RTO as per Business Needs] {
+}
+"Shape 2" > industrial-core-switch-2
+"Shape 2" > "Shape 1" [conduit: Firewall Cluster]
+
+
+"Shape 10" > industrial-core-switch
+"Shape 11" > "Shape 7"
+"Shape 13" > "Shape 8"
+"Shape 12" > "Shape 9"
+"Shape 14" > "Shape 13"
+"Shape 6" > "Shape 2" [conduit: Industrial Firewall]
+industrial-core-switch-2 > "Shape 10"
+
+line "l1" [from: 801,1977, to: 1622,1979, color: orange, width: 2]
+
+line "l2" [from: 1145,1929, to: 1144,1977, color: orange, width: 2]
+
+line "l3" [from: 1409,1932, to: 1409,1976, color: orange, width: 2]
+
+line "l4" [from: 1409,1979, to: 1410,2040, color: orange, width: 2]
+
+line "l5" [from: 1184,1978, to: 1183,2035, color: orange, width: 2]
+
+line "l6" [from: 988,1977, to: 987,2042, color: orange, width: 2]
+
+line "l7" [from: 812,1978, to: 811,2034, color: orange, width: 2]
+
+line "l8" [from: 1615,1978, to: 1616,2037, color: orange, width: 2]
+
+line "l9" [from: 1835,1949, to: 2469,1950, color: orange, width: 2]
+
+line "l10" [from: 2002,1904, to: 2002,2018, color: orange, width: 2]
+
+line "l11" [from: 2191,1906, to: 2192,1947, color: orange, width: 2]
+
+line "l12" [from: 2140,1949, to: 2139,2016, color: orange, width: 2]
+
+line "l13" [from: 2284,1948, to: 2286,2008, color: orange, width: 2]
+
+line "l14" [from: 2423,1950, to: 2424,2008, color: orange, width: 2]
+
+line "l15" [from: 1883,1949, to: 1882,2009, color: orange, width: 2]
+
+line "l16" [from: 14,1961, to: 624,1965, color: orange, width: 2]
+
+line "l17" [from: 171,1930, to: 171,1957, color: orange, width: 2]
+
+line "l18" [from: 509,1930, to: 509,1959, color: orange, width: 2]
+
+line "l19" [from: 616,1967, to: 616,2020, color: orange, width: 2]
+
+line "l20" [from: 470,1961, to: 470,2020, color: orange, width: 2]
+
+line "l21" [from: 330,1963, to: 330,2015, color: orange, width: 2]
+
+line "l22" [from: 202,1963, to: 202,2028, color: orange, width: 2]
+
+line "l23" [from: 33,1961, to: 35,2028, color: orange, width: 2]
+"Shape 14" > "Shape 11"
+"Shape 14" > "Shape 12"
