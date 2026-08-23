@@ -1,0 +1,79 @@
+title: Automotive Factory OT Architecture
+summary: Secure IT OT production system
+
+Remote Maintenance Vendor [icon: users]
+
+zone "Enterprise Network" [level: 4-5, color: blue] {
+  SAP Production Planning [icon: sap-erp]
+  Corporate Patch Management [icon: server]
+  Corporate VPN Gateway [icon: vpn]
+  Corporate Firewall [icon: firewall]
+}
+
+zone "Industrial DMZ" [level: dmz, color: orange] {
+  DMZ Firewall Primary [icon: firewall]
+  DMZ Firewall Standby [icon: firewall]
+  DMZ Historian Mirror [icon: historian]
+  DMZ Patch Repository [icon: server]
+  DMZ Jump Server [icon: jump-server]
+}
+
+zone "Manufacturing Operations" [level: 2-3, color: purple] {
+  Plant MES Server [icon: sap-mes]
+  Plant Historian [icon: historian]
+  OT Domain Controller [icon: active-directory]
+  OT Remote Access Server [icon: server]
+  Nozomi OT Monitoring [icon: nozomi]
+}
+
+zone "Supervisory Control" [level: 2-3, color: purple] {
+  Assembly SCADA Server [icon: scada]
+  Body Shop HMI Station [icon: hmi]
+  Final Assembly HMI Station [icon: hmi]
+  Assembly Engineering Workstation [icon: engineering-station]
+}
+
+zone "Basic Control" [level: 1, color: green] {
+  Body Shop ControlLogix PLC [icon: allen-bradley]
+  Final Assembly ControlLogix PLC [icon: allen-bradley]
+  Conveyor Safety PLC [icon: plc]
+}
+
+zone "Assembly Process" [level: 0, color: yellow] {
+  Weld Robot Cell [icon: robot]
+  Vehicle Conveyor Drive [icon: actuator]
+  Torque Sensor Array [icon: sensor]
+}
+
+Remote Maintenance Vendor > Corporate VPN Gateway [conduit: VPN]
+Corporate VPN Gateway > Corporate Firewall [conduit: HTTPS:443]
+Corporate Patch Management > Corporate Firewall [conduit: HTTPS:443]
+SAP Production Planning > Corporate Firewall [conduit: REST/TLS]
+Corporate Firewall > DMZ Firewall Primary [firewall, conduit: HTTPS:443]
+DMZ Firewall Primary > DMZ Firewall Standby [firewall, conduit: HA]
+DMZ Firewall Primary > DMZ Patch Repository [conduit: HTTPS:443]
+DMZ Firewall Primary > DMZ Jump Server [conduit: RDP]
+Plant Historian > DMZ Firewall Primary [firewall, conduit: OPC-UA:4840]
+DMZ Firewall Primary > DMZ Historian Mirror [conduit: OPC-UA:4840]
+DMZ Historian Mirror > DMZ Firewall Primary [firewall, conduit: REST/TLS]
+DMZ Firewall Primary > Corporate Firewall [firewall, conduit: REST/TLS]
+DMZ Patch Repository > Assembly SCADA Server [firewall, conduit: HTTPS:443]
+DMZ Jump Server > OT Remote Access Server [firewall, conduit: RDP]
+DMZ Jump Server > Assembly SCADA Server [firewall, conduit: RDP]
+DMZ Jump Server > Assembly Engineering Workstation [firewall, conduit: RDP]
+Plant MES Server > Plant Historian [conduit: OPC-UA:4840]
+Assembly SCADA Server > Plant Historian [conduit: OPC-UA:4840]
+OT Domain Controller > Assembly SCADA Server [conduit: LDAP/Kerberos]
+OT Domain Controller > Assembly Engineering Workstation [conduit: LDAP/Kerberos]
+OT Domain Controller > DMZ Jump Server [firewall, conduit: LDAP/Kerberos]
+Nozomi OT Monitoring > Assembly SCADA Server [conduit: SPAN]
+Assembly SCADA Server > Body Shop HMI Station [conduit: OPC-UA:4840]
+Assembly SCADA Server > Final Assembly HMI Station [conduit: OPC-UA:4840]
+Assembly Engineering Workstation > Assembly SCADA Server [conduit: OPC-UA:4840]
+Assembly Engineering Workstation > Body Shop ControlLogix PLC [conduit: EtherNet/IP:44818]
+Assembly SCADA Server > Body Shop ControlLogix PLC [conduit: EtherNet/IP:44818]
+Assembly SCADA Server > Final Assembly ControlLogix PLC [conduit: EtherNet/IP:44818]
+Assembly SCADA Server > Conveyor Safety PLC [firewall, conduit: OPC-UA:4840]
+Body Shop ControlLogix PLC > Weld Robot Cell [conduit: EtherNet/IP:44818]
+Final Assembly ControlLogix PLC > Torque Sensor Array [conduit: PROFINET]
+Conveyor Safety PLC > Vehicle Conveyor Drive [firewall, conduit: PROFINET]
